@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Deterson Health Centers</title>
+    <meta name="description" content="">
+
+    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.min.css">
+
+    <script>
+        function isNumber(evt) {
+            var iKeyCode = (evt.which) ? evt.which : evt.keyCode
+            if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57)) {
+                alert("Please enter a zip code.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="uxWrapper">
+        <div id="uxTop">
+            <img src="images/gradient.png" class="responsive" />
+            <div id="uxBrand">
+                <img src="images/logo.svg" class="responsive" />
+            </div>
+        </div>
+        <!--End uxTop-->
+        <div id="content" class="container">
+            <div id="uxHeader">
+                <img src="images/hospital.png" class="responsive" />
+            </div>
+            <div id="uxSearch" class="col-xs-12">
+                <div class="col-xs-12 col-md-7">
+                    <div class="form-group">
+                        <label for="searchInput">Zip Code</label>
+                        <input type="text" class="form-control" id="uxSearchInput" maxlength="5" onkeypress="javascript:return isNumber(event)">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-2 ">
+                    &nbsp;
+                </div>
+                <div class="col-xs-12 col-md-3">
+                    <button type="submit" class="btn btn-success">Search</button>
+                </div>
+            </div>
+            <div id="uxFitleredResults" class="col-xs-12">
+                <div id="uxFilters" class="col-xs-12 col-md-3">
+                    <div id="uxRange" class="col-xs-12">
+                        <div id="uxSlide">
+                            <h3>Distance</h3>
+                            <input type="range" min="5" max="30" value="30" step="5" list="tickmarks" id="rangeInput">
+                            <datalist id="tickmarks">
+                        <option >5</option>
+                        <option>10</option>
+                        <option>15</option>
+                        <option>20</option>
+                        <option>25</option>
+                        <option>All</option>
+                      </datalist>
+                        </div>
+                        <div id="uxCurrDist">
+                            <p id="uxMiles"></p>
+                            <p id="uxZipResult"></p>
+                        </div>
+                    </div>
+                    <div class="divider">
+                        <hr/>
+                    </div>
+                    <div id="uxGender" class="col-xs-12">
+                        <h3>Gender</h3>
+                        <div class="form-group ">
+                            <input name="maleGroup" type="checkbox" id="male">
+                            <label for="male">Male</label>
+                        </div>
+                        <div class="form-group ">
+                            <input name="femaleGroup" type="checkbox" id="female">
+                            <label for="male">Female</label>
+                        </div>
+                        <div class="form-group ">
+                            <input name="noneGroup" type="checkbox" id="noPref">
+                            <label for="male">No Preference</label>
+                        </div>
+                    </div>
+                    <!--End Gender-->
+                </div>
+                <!--End Filter-->
+                <div class="col-xs-12 col-md-9">
+                    <div id="uxTotResult" class="col-xs-12">
+                        <p>Total Results: 3</p>
+                    </div>
+                    <div id="uxResults" class="col-xs-12">
+                        <div id="doc1" class="row">
+                            <div class="col-xs-12 col-md-2">
+                                <img src="images/avatar.png" class="responsive" />
+                            </div>
+                            <div id="uxInfo" class="col-xs-12 col-md-6">
+                                <h3>Nick Andrew Mandela</h3>
+                                <p>Vein Care Again, Neurology</p>
+                            </div>
+                            <div id="uxLocation" class="col-xs-12 col-md-4">
+                                <h4>St Louis</h4>
+                                <p>1 Mile</p>
+                                <h4>Olathe</h4>
+                                <p>23 Mile</p>
+                                <h4>Vein Care Center</h4>
+                                <p>12 Mile</p>
+                            </div>
+                        </div>
+                        <div id="doc2" class="row">
+                            <div class="col-xs-12 col-md-2">
+                                <img src="images/drheap.jpg" class="responsive" />
+                            </div>
+                            <div id="uxInfo" class="col-xs-12 col-md-6">
+                                <h3>Dr. Ryan Heap</h3>
+                                <p>Vein Care Again, Neurology</p>
+                            </div>
+                            <div id="uxLocation" class="col-xs-12 col-md-4">
+                                <h4>St Louis</h4>
+                                <p>5 Mile</p>
+                                <h4>Olathe</h4>
+                                <p>15 Mile</p>
+                                <h4>Vein Care Center</h4>
+                                <p>8 Mile</p>
+                            </div>
+                        </div>
+                        <div id="doc3" class="row">
+                            <div class="col-xs-12 col-md-2">
+                                <img src="images/avatar.png" class="responsive" />
+                            </div>
+                            <div id="uxInfo" class="col-xs-12 col-md-6">
+                                <h3>Dr. Jan Smith</h3>
+                                <p></p>
+                            </div>
+                            <div id="uxLocation" class="col-xs-12 col-md-4">
+                                <h4>Olathe</h4>
+                                <p>32 Mile</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--End uxFilteredResults-->
+        </div>
+        <!--End Content-->
+    </div>
+    <!--End Wrapper-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/main.min.js"></script>
+
+
+</body>
+
+</html>
